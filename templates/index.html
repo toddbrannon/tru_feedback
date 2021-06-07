@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Please rate your service</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="../static/TruSponseLogoMkup2.png" alt="TruSponse" class="logo" />
+      
+      {% if message %}
+        <p class="message">{{ message | safe  }}</p>
+      {% endif %}
+     
+      <form action="/submit" method="POST">
+        <div class="form-group">
+        <div class="firstname">
+          <h3>First Name (required)</h3>
+          <input
+            type="text"
+            name="first_name"
+            
+          />
+        </div>
+        <div class="lastname">
+          <h3>Last Name (required)</h3>
+          <input
+            type="text"
+            name="last_name"
+            
+          />
+        </div>
+        </div>
+        <div class="form-group">
+        <div class="email">
+          <h3>Email (required)</h3>
+          <input type="text" name="email_address"/>
+        </div>
+        </div>
+        <div class="form-group age-group">
+                <h3>Age</h3>
+                <select name="age_group" class="select">
+                    <option value="">Select Group</option>
+                    <option value="1">Under 18</option>
+                    <option value="2">19 to 25</option>
+                    <option value="3">26 to 35</option>
+                    <option value="4">36 to 45</option>
+                    <option value="5">46 to 55</option>
+                    <option value="6">56 to 65</option>
+                    <option value="6">Over 65</option>
+                </select>
+            </div>
+
+          <div class="form-group">
+                <h3>In dollars, how much do you typically spend per year on this kind of product?</h3>
+                <select name="dollars_spent" class="select">
+                    <option value="">Select Range</option>
+                    <option value="1">Under $50</option>
+                    <option value="2">$51 to $250</option>
+                    <option value="3">$251 to $500</option>
+                    <option value="4">$501 to $1,000</option>
+                    <option value="5">$1,001 to $2,500</option>
+                    <option value="6">$2,501 to $10,000</option>
+                    <option value="6">Over $10,000</option>
+                </select>
+            </div>
+      <div class="survey_container">
+        <h2>Please select the best answer for each question below:</h2>
+        <div class="form-group">
+          <h3>Did the product arrive on time?</h3>
+            <label class="yes_no"><input type="radio" name="on_time" value="1" checked/> Yes</label>
+            <label class="yes_no"><input type="radio" name="on_time" value="2" /> No</label>  
+        </div>
+
+         <div class="form-group">
+          <h3>Did you receive the correct product?</h3>
+            <label class="yes_no"><input type="radio" name="correct_product" value="1" checked/> Yes</label>
+            <label class="yes_no"><input type="radio" name="correct_product" value="2" /> No</label>  
+        </div>
+
+        <div class="form-group">
+          <h3>Did the product meet your expectations?</h3>
+            <label class="yes_no"><input type="radio" name="expectation" value="1" checked/> Yes</label>
+            <label class="yes_no"><input type="radio" name="expectation" value="2" /> No</label> 
+        </div>
+
+        <div class="form-group">
+          <h3>Did the photograph of the product on our website accurately represent what you received?</h3>
+            <label class="yes_no"><input type="radio" name="photograph" value="1" checked/> Yes</label>
+            <label class="yes_no"><input type="radio" name="photograph" value="2" /> No</label>   
+        </div>
+
+        <div class="form-group">
+          <h3>Did the description of the product on our website accurately represent what you received?</h3>
+            <label class="yes_no"><input type="radio" name="description" value="1" checked/> Yes</label>
+            <label class="yes_no"><input type="radio" name="description" value="2" /> No</label>  
+        </div>
+
+        <div class="form-group">
+          <h3>How likely is it that you would recommend our services/products to a friend?</h3>
+            <label class="block"><input type="radio" name="recommend" value="1" /> Extremely Unlikely</label>
+            <label class="block"><input type="radio" name="recommend" value="2" /> Somewhat Unlikely</label>
+            <label class="block"><input type="radio" name="recommend" value="3" /> Neutral</label>
+            <label class="block"><input type="radio" name="recommend" value="4" /> Somewhat Likely</label>
+            <label class="block"><input type="radio" name="recommend" value="5" checked/> Extremely Likely</label>  
+        </div>
+
+        <div class="form-group">
+          <h3>How likely is it that you will use our services/products to meet your needs in the future?</h3>
+            <label class="block"><input type="radio" name="use_again" value="1" /> Extremely Unlikely</label>
+            <label class="block"><input type="radio" name="use_again" value="2" /> Somewhat Unlikely</label>
+            <label class="block"><input type="radio" name="use_again" value="3" /> Neutral</label>
+            <label class="block"><input type="radio" name="use_again" value="4" /> Somewhat Likely</label>
+            <label class="block"><input type="radio" name="use_again" value="5" checked/> Extremely Likely</label>  
+        </div>
+
+        <div class="form-group">
+          <h3>Do you identify as a loyal customer of our brand?</h3>
+            <label class="yes_no"><input type="radio" name="loyalty" value="1" checked/> Yes</label>
+            <label class="yes_no"><input type="radio" name="loyalty" value="2" /> No</label>   
+        </div>
+        
+        
+
+        <div class="form-group">
+          <h3>Comments about your experience</h3>
+          <textarea
+            name="comments"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Tell us what you liked and/or did not like"
+          ></textarea>
+        </div>
+        <input type="submit" value="Submit" class="btn" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Please rate your service</title>
+  </head>
+  <body>
+      <div class="row"><h3>Reponse</h3></div>
+      <div class="row">
+          <div class="col-md-4">
+              <div class="card card-body">
+                  form
+              </div>
+          </div>
+          <div class="col-md-8">
+              <table id="example" class="table table-striped table-bordered" style="width: 100%">
+                  <thead>
+                      <tr>
+                          <td>id</td>
+                          <td>first_name</td>
+                          <td>last_name</td>
+                          <td>email_address</td>
+                          <td>age_group</td>
+                          <td>Action</td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {% for data in responses %}
+                      <tr>
+                          <td>{{data.id}}</td>
+                          <td>{{data.first_name}}</td>
+                          <td>{{data.last_name}}</td>
+                          <td>{{data.email_address}}</td>
+                          <td>{{data.age_group}}</td>
+                          <td width="130">
+                              <a href="/edit/{{data.id}}" class="btn btn-secondary btn-sm">edit</a>
+                              <a href="/delete/{{data.id}}" class="btn btn-danger btn-sm">delete</a>
+                          </td>
+                      </tr>
+                      {% end for %}
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </body>
+</html>  

@@ -1,0 +1,6 @@
+database.py
+app_backup.py
+
+# From Brad Traversey's Python & MySQL Crash course June 15, 2020
+# https://www.youtube.com/watch?v=BHwgnGEhYG8
+# Gist: https://gist.github.com/bradtraversy/5ea2fa59776ddc8cf45c536be65d4f86
